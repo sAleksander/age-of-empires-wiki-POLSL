@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.age_of_empires_wiki_polsl.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/civilizationListFragment"
+        android:name="com.example.age_of_empires_wiki_polsl.ui.civilizations.list.CivilizationListFragment"
+        android:label="Civilizations"
+        tools:layout="@layout/fragment_civilization_list" >
+        <action
+            android:id="@+id/action_civilizationListFragment_to_civilizationDetailsFragment"
+            app:destination="@id/civilizationDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/civilizationDetailsFragment"
+        android:name="com.example.age_of_empires_wiki_polsl.ui.civilizations.details.CivilizationDetailsFragment"
+        android:label="Civilization"
+        tools:layout="@layout/fragment_civilization_details" />
+    <fragment
+        android:id="@+id/structureListFragment"
+        android:name="com.example.age_of_empires_wiki_polsl.ui.structures.list.StructureListFragment"
+        android:label="Structures"
+        tools:layout="@layout/fragment_structure_list" >
+        <action
+            android:id="@+id/action_structureListFragment_to_structureDetailsFragment"
+            app:destination="@id/structureDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/structureDetailsFragment"
+        android:name="com.example.age_of_empires_wiki_polsl.ui.structures.details.StructureDetailsFragment"
+        android:label="Structure"
+        tools:layout="@layout/fragment_structure_details" />
+    <fragment
+        android:id="@+id/technologyListFragment"
+        android:name="com.example.age_of_empires_wiki_polsl.ui.technologies.list.TechnologyListFragment"
+        android:label="Technologies"
+        tools:layout="@layout/fragment_technology_list" >
+        <action
+            android:id="@+id/action_technologyListFragment_to_technologyDetailsFragment"
+            app:destination="@id/technologyDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/technologyDetailsFragment"
+        android:name="com.example.age_of_empires_wiki_polsl.ui.technologies.details.TechnologyDetailsFragment"
+        android:label="Technology"
+        tools:layout="@layout/fragment_technology_list" >
+    </fragment>
+    <fragment
+        android:id="@+id/unitListFragment"
+        android:name="com.example.age_of_empires_wiki_polsl.ui.units.list.UnitListFragment"
+        android:label="Units"
+        tools:layout="@layout/fragment_unit_list" >
+        <action
+            android:id="@+id/action_unitListFragment_to_unitDetailsFragment"
+            app:destination="@id/unitDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/unitDetailsFragment"
+        android:name="com.example.age_of_empires_wiki_polsl.ui.units.details.UnitDetailsFragment"
+        android:label="Unit"
+        tools:layout="@layout/fragment_unit_details" />
+
+</navigation>

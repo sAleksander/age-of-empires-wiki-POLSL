@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_baseline_explore_24"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/civilizationListFragment"
+            android:icon="@drawable/ic_baseline_explore_24"
+            android:title="Civilizations" />
+        <item
+            android:id="@+id/structureListFragment"
+            android:icon="@drawable/ic_baseline_explore_24"
+            android:title="Structures" />
+        <item
+            android:id="@+id/technologyListFragment"
+            android:icon="@drawable/ic_baseline_explore_24"
+            android:title="Technologies" />
+        <item
+            android:id="@+id/unitListFragment"
+            android:icon="@drawable/ic_baseline_explore_24"
+            android:title="Units" />
+
+    </group>
+</menu>
