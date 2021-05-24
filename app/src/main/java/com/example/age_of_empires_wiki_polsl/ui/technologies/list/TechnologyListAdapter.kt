@@ -1,4 +1,4 @@
-package com.example.age_of_empires_wiki_polsl.ui.civilizations.list
+package com.example.age_of_empires_wiki_polsl.ui.technologies.list
 
 import android.view.LayoutInflater
 import android.view.View

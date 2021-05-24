@@ -1,4 +1,4 @@
-package com.example.age_of_empires_wiki_polsl.ui.civilizations
+package com.example.age_of_empires_wiki_polsl.ui.technologies
 
 import androidx.lifecycle.ViewModel
 import android.app.Application

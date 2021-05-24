@@ -1,4 +1,4 @@
-package com.example.age_of_empires_wiki_polsl.ui.civilizations.list
+package com.example.age_of_empires_wiki_polsl.ui.technologies.list
 
 import com.example.age_of_empires_wiki_polsl.TempDatabase.ApiClasses.Technology
 

@@ -1,4 +1,4 @@
-package com.example.age_of_empires_wiki_polsl.ui.civilizations.list
+package com.example.age_of_empires_wiki_polsl.ui.technologies.list
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,11 +14,11 @@ import com.example.age_of_empires_wiki_polsl.R
 import com.example.age_of_empires_wiki_polsl.TempDatabase.ApiClasses.Technology
 import com.example.age_of_empires_wiki_polsl.ui.civilizations.CivilizationModel
 import com.example.age_of_empires_wiki_polsl.ui.civilizations.CivilizationViewModel
-import com.example.age_of_empires_wiki_polsl.ui.civilizations.TechnologyViewModel
+import com.example.age_of_empires_wiki_polsl.ui.technologies.TechnologyViewModel
 import kotlinx.android.synthetic.main.fragment_civilization_list.*
 import kotlinx.android.synthetic.main.fragment_technology_list.*
 
-class TechnologyListFragment : Fragment(), ICallbackTechnology {
+public class TechnologyListFragment : Fragment(), ICallbackTechnology {
     private lateinit var myAdapter: TechnologyListAdapter
     private lateinit var myLayoutManager: LinearLayoutManager
     private lateinit var recyclerView: RecyclerView
@@ -53,7 +53,7 @@ class TechnologyListFragment : Fragment(), ICallbackTechnology {
 
     override fun clickTechnology(model: Technology) {
         viewModel.currentTechnology = model
-        findNavController().navigate(R.id.action_civilizationListFragment_to_civilizationDetailsFragment)
+        findNavController().navigate(R.id.action_technologyListFragment_to_technologyDetailsFragment)
     }
 
 }
