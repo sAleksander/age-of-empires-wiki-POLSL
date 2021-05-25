@@ -16,7 +16,9 @@ import com.example.age_of_empires_wiki_polsl.ui.civilizations.CivilizationModel
 import com.example.age_of_empires_wiki_polsl.ui.civilizations.CivilizationViewModel
 import com.example.age_of_empires_wiki_polsl.ui.technologies.TechnologyViewModel
 import kotlinx.android.synthetic.main.fragment_civilization_list.*
+import kotlinx.android.synthetic.main.fragment_technology_details.*
 import kotlinx.android.synthetic.main.fragment_technology_list.*
+import kotlinx.android.synthetic.main.technology_list_one_row.*
 
 public class TechnologyListFragment : Fragment(), ICallbackTechnology {
     private lateinit var myAdapter: TechnologyListAdapter
@@ -38,6 +40,8 @@ public class TechnologyListFragment : Fragment(), ICallbackTechnology {
         viewModel.getAllTechnology.observe(viewLifecycleOwner, Observer {
             myAdapter.notifyDataSetChanged()
         })
+        //textViewName.text = viewModel.currentTechnology!!.name
+        //txtID.text=viewModel.currentTechnology!!.id.toString()
 
         return view
     }
