@@ -146,4 +146,16 @@
         app:layout_constraintStart_toStartOf="@id/txtExpansion"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="196dp"
+        android:layout_height="173dp"
+        android:src="@drawable/_f6b44378716486980152197c22db0a2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCivilizationCivilizationBonus"
+        app:layout_constraintVertical_bias="0.995" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
