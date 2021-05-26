@@ -1,14 +1,286 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StructureDetailsFragment">
+    tools:context=".ui.technologies.list.TechnologyListFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="100dp"
+        android:layout_weight="1"
+        android:text="Title"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+
+    <TextView
+        android:id="@+id/leftTextViewID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="80dp"
+        android:text="ID:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/rightTextViewID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_name_value_text"
+        android:text="ID"
+        app:layout_constraintStart_toEndOf="@id/leftTextViewID"
+        app:layout_constraintTop_toTopOf="@id/leftTextViewID" />
+
+    <TextView
+        android:id="@+id/leftTextViewName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_name_value_text"
+        android:text="Name:"
+        app:layout_constraintStart_toStartOf="@id/leftTextViewID"
+        app:layout_constraintTop_toBottomOf="@id/leftTextViewID" />
+    <TextView
+        android:id="@+id/rightTextViewName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_name_value_text"
+        android:text="Name"
+        app:layout_constraintStart_toEndOf="@id/leftTextViewName"
+        app:layout_constraintTop_toTopOf="@id/leftTextViewName" />
+
+    <TextView
+        android:id="@+id/leftTextViewExpansion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Expansion:"
+        android:layout_marginTop="@dimen/margin_name_value_text"
+        app:layout_constraintStart_toStartOf="@+id/leftTextViewName"
+        app:layout_constraintTop_toBottomOf="@+id/leftTextViewName" />
+    <TextView
+        android:id="@+id/rightTextViewExpansion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_name_value_text"
+        android:text="expansion"
+        app:layout_constraintStart_toEndOf="@+id/leftTextViewExpansion"
+        app:layout_constraintTop_toTopOf="@id/leftTextViewExpansion" />
+
+    <TextView
+        android:id="@+id/leftTextViewCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cost:"
+        android:layout_marginTop="@dimen/margin_name_value_text"
+        app:layout_constraintStart_toStartOf="@id/leftTextViewExpansion"
+        app:layout_constraintTop_toBottomOf="@id/leftTextViewExpansion" />
+
+    <TextView
+        android:id="@+id/leftTextViewCostWood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_name_value_text"
+        android:layout_marginStart="@dimen/indent_name_value_text"
+        android:text="Wood:"
+        app:layout_constraintStart_toStartOf="@id/leftTextViewCost"
+        app:layout_constraintTop_toBottomOf="@id/leftTextViewCost" />
+    <TextView
+        android:id="@+id/rightTextViewCostWood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_name_value_text"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@id/leftTextViewCostWood"
+        app:layout_constraintTop_toTopOf="@id/leftTextViewCostWood" />
+
+    <TextView
+        android:id="@+id/leftTextViewCostStone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_name_value_text"
+        android:text="Stone:"
+        app:layout_constraintStart_toStartOf="@id/leftTextViewCostWood"
+        app:layout_constraintTop_toBottomOf="@id/leftTextViewCostWood" />
+    <TextView
+        android:id="@+id/rightTextViewCostStone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_name_value_text"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@id/leftTextViewCostStone"
+        app:layout_constraintTop_toTopOf="@id/leftTextViewCostStone" />
+
+
+    <TextView
+        android:id="@+id/leftTextViewCostGold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_name_value_text"
+        android:text="Gold:"
+        app:layout_constraintStart_toStartOf="@id/leftTextViewCostStone"
+        app:layout_constraintTop_toBottomOf="@id/leftTextViewCostStone" />
+    <TextView
+        android:id="@+id/rightTextViewCostGold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_name_value_text"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@id/leftTextViewCostGold"
+        app:layout_constraintTop_toTopOf="@id/leftTextViewCostGold" />
+
+    <TextView
+        android:id="@+id/leftTextViewHitPoints"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hit points:"
+        android:layout_marginTop="@dimen/margin_name_value_text"
+        app:layout_constraintStart_toStartOf="@id/leftTextViewCost"
+        app:layout_constraintTop_toBottomOf="@id/leftTextViewCostGold" />
+    <TextView
+        android:id="@+id/rightTextViewHitPoints"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_name_value_text"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@id/leftTextViewHitPoints"
+        app:layout_constraintTop_toTopOf="@id/leftTextViewHitPoints" />
+
+    <TextView
+        android:id="@+id/leftTextViewAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Age:"
+        android:layout_marginTop="@dimen/margin_name_value_text"
+        app:layout_constraintStart_toStartOf="@+id/leftTextViewHitPoints"
+        app:layout_constraintTop_toBottomOf="@+id/leftTextViewHitPoints" />
+    <TextView
+        android:id="@+id/rightTextViewAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_name_value_text"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@+id/leftTextViewAge"
+        app:layout_constraintTop_toTopOf="@+id/leftTextViewAge" />
+
+    <TextView
+        android:id="@+id/leftTextViewArmor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Armor:"
+        android:layout_marginTop="@dimen/margin_name_value_text"
+        app:layout_constraintStart_toStartOf="@+id/leftTextViewAge"
+        app:layout_constraintTop_toBottomOf="@+id/leftTextViewAge" />
+    <TextView
+        android:id="@+id/rightTextViewArmor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_name_value_text"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@+id/leftTextViewArmor"
+        app:layout_constraintTop_toTopOf="@+id/leftTextViewArmor" />
+
+    <TextView
+        android:id="@+id/leftTextViewAttack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Attack:"
+        android:layout_marginTop="@dimen/margin_name_value_text"
+        app:layout_constraintStart_toStartOf="@+id/leftTextViewArmor"
+        app:layout_constraintTop_toBottomOf="@+id/leftTextViewArmor" />
+    <TextView
+        android:id="@+id/rightTextViewAttack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_name_value_text"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@+id/leftTextViewAttack"
+        app:layout_constraintTop_toTopOf="@+id/leftTextViewAttack" />
+
+    <TextView
+        android:id="@+id/leftTextViewBuildTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Build Time:"
+        android:layout_marginTop="@dimen/margin_name_value_text"
+        app:layout_constraintStart_toStartOf="@+id/leftTextViewAttack"
+        app:layout_constraintTop_toBottomOf="@+id/leftTextViewAttack" />
+    <TextView
+        android:id="@+id/rightTextViewBuildTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_name_value_text"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@+id/leftTextViewBuildTime"
+        app:layout_constraintTop_toTopOf="@+id/leftTextViewBuildTime" />
+
+    <TextView
+        android:id="@+id/leftTextViewLineOfSight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Line of sight:"
+        android:layout_marginTop="@dimen/margin_name_value_text"
+        app:layout_constraintStart_toStartOf="@+id/leftTextViewBuildTime"
+        app:layout_constraintTop_toBottomOf="@+id/leftTextViewBuildTime" />
+    <TextView
+        android:id="@+id/rightTextViewLineOfSight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_name_value_text"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@+id/leftTextViewLineOfSight"
+        app:layout_constraintTop_toTopOf="@id/leftTextViewLineOfSight" />
+
+    <TextView
+        android:id="@+id/leftTextViewRange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Range:"
+        android:layout_marginTop="@dimen/margin_name_value_text"
+        app:layout_constraintStart_toStartOf="@+id/leftTextViewLineOfSight"
+        app:layout_constraintTop_toBottomOf="@+id/leftTextViewLineOfSight" />
+    <TextView
+        android:id="@+id/rightTextViewRange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_name_value_text"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@+id/leftTextViewRange"
+        app:layout_constraintTop_toTopOf="@id/leftTextViewRange" />
+
+    <TextView
+        android:id="@+id/leftTextViewReloadTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reload Time:"
+        android:layout_marginTop="@dimen/margin_name_value_text"
+        app:layout_constraintStart_toStartOf="@+id/leftTextViewRange"
+        app:layout_constraintTop_toBottomOf="@+id/leftTextViewRange" />
+    <TextView
+        android:id="@+id/rightTextViewReloadTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_name_value_text"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@+id/leftTextViewReloadTime"
+        app:layout_constraintTop_toTopOf="@id/leftTextViewReloadTime" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        android:src="@drawable/structure"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.995" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

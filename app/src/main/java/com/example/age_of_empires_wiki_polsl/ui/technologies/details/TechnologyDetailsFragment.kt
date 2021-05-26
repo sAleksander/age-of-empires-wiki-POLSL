@@ -23,7 +23,7 @@ class TechnologyDetailsFragment : Fragment() {
         viewModel = ViewModelProvider(requireActivity()).get(TechnologyViewModel::class.java)
         val model = viewModel.currentTechnology!!
 
-        view.findViewById<TextView>(R.id.textViewCivlizationTitle).text = model.name
+        view.findViewById<TextView>(R.id.textViewTitle).text = model.name
         view.findViewById<TextView>(R.id.textViewCivilizationID).text = model.id.toString()
         view.findViewById<TextView>(R.id.textViewCivilizationName).text = model.name
         view.findViewById<TextView>(R.id.textViewCivilizationExpansion).text = model.expansion

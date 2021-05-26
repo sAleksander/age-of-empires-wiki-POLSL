@@ -5,56 +5,48 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.lifecycle.ViewModelProvider
 import com.example.age_of_empires_wiki_polsl.R
+import com.example.age_of_empires_wiki_polsl.TempDatabase.ApiClasses.StructureCost
+import com.example.age_of_empires_wiki_polsl.ui.structures.StructuresViewModel
+import com.squareup.moshi.Json
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [StructureDetailsFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class StructureDetailsFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var viewModel: StructuresViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_structure_details, container, false)
+        val view = inflater.inflate(R.layout.fragment_structure_details, container, false)
+
+        viewModel = ViewModelProvider(requireActivity()).get(StructuresViewModel::class.java)
+        val model = viewModel.currentStructure!!
+
+        view.findViewById<TextView>(R.id.textViewTitle).text = toString(model.name)
+
+        view.findViewById<TextView>(R.id.rightTextViewID).text = toString(model.id)
+        view.findViewById<TextView>(R.id.rightTextViewAge).text = toString(model.age)
+        view.findViewById<TextView>(R.id.rightTextViewArmor).text = toString(model.armor)
+        view.findViewById<TextView>(R.id.rightTextViewAttack).text = toString(model.attack)
+        view.findViewById<TextView>(R.id.rightTextViewBuildTime).text = toString(model.buildTime)
+        view.findViewById<TextView>(R.id.rightTextViewExpansion).text = toString(model.expansion)
+        view.findViewById<TextView>(R.id.rightTextViewHitPoints).text = toString(model.hitPoints)
+        view.findViewById<TextView>(R.id.rightTextViewLineOfSight).text = toString(model.lineOfSight)
+        view.findViewById<TextView>(R.id.rightTextViewName).text = toString(model.name)
+        view.findViewById<TextView>(R.id.rightTextViewRange).text = toString(model.range)
+        view.findViewById<TextView>(R.id.rightTextViewReloadTime).text = toString(model.reloadTime)
+
+        view.findViewById<TextView>(R.id.rightTextViewCostWood).text = toString(model.cost.wood)
+        view.findViewById<TextView>(R.id.rightTextViewCostStone).text = toString(model.cost.stone)
+        view.findViewById<TextView>(R.id.rightTextViewCostGold).text = toString(model.cost.gold)
+
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment StructureDetailsFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            StructureDetailsFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun <T> toString(something: T?): String {
+        if (something == null) return "0"
+        else return something.toString()
     }
 }
