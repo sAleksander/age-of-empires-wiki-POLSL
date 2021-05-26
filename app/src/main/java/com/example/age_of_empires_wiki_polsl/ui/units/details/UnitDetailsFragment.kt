@@ -31,11 +31,11 @@ class UnitDetailsFragment : Fragment() {
         view.findViewById<TextView>(R.id.valueAttackBonus).text = listToString(unit.attackBonus)
         view.findViewById<TextView>(R.id.valueArmor).text = unit.armor
         view.findViewById<TextView>(R.id.valueArmorBonus).text = listToString(unit.armorBonus)
-        view.findViewById<TextView>(R.id.valueAccuracy).text = emptyValueForNull(unit.accuracy == null)
-        view.findViewById<TextView>(R.id.valueRange).text = emptyValueForNull(unit.range == null)
+        view.findViewById<TextView>(R.id.valueAccuracy).text = emptyValueForNull(unit.accuracy)
+        view.findViewById<TextView>(R.id.valueRange).text = emptyValueForNull(unit.range)
         view.findViewById<TextView>(R.id.valueCost).text = unitCostToString(unit.cost)
-        view.findViewById<TextView>(R.id.valueBuildTime).text = emptyValueForNull(unit.buildTime == null)
-        view.findViewById<TextView>(R.id.valueReloadTime).text = emptyValueForNull(unit.reloadTime == null)
+        view.findViewById<TextView>(R.id.valueBuildTime).text = emptyValueForNull(unit.buildTime)
+        view.findViewById<TextView>(R.id.valueReloadTime).text = emptyValueForNull(unit.reloadTime)
         return view
     }
 

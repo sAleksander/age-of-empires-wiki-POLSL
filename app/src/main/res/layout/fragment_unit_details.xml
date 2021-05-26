@@ -6,6 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".ui.units.list.UnitListFragment">
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="213dp"
+        android:layout_height="419dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:alpha="0.3"
+        android:src="@drawable/french_crossbow_man"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
         android:id="@+id/titleName"
         android:layout_width="wrap_content"
@@ -155,6 +168,7 @@
         app:layout_constraintTop_toBottomOf="@+id/valueAttack" />
 
     <!-- Armor section -->
+
     <TextView
         android:id="@+id/labelArmor"
         android:layout_width="0dp"
@@ -342,12 +356,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/valueBuildTime" />
-
-    <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/barrier"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:barrierDirection="left" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
