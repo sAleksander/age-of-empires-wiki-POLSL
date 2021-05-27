@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 import com.example.age_of_empires_wiki_polsl.R
+import com.example.age_of_empires_wiki_polsl.TempDatabase.ApiClasses.TechnologyCost
+import com.example.age_of_empires_wiki_polsl.TempDatabase.ApiClasses.UnitCost
 import com.example.age_of_empires_wiki_polsl.ui.technologies.TechnologyViewModel
 
 class TechnologyDetailsFragment : Fragment() {
@@ -24,23 +26,23 @@ class TechnologyDetailsFragment : Fragment() {
         val model = viewModel.currentTechnology!!
 
         view.findViewById<TextView>(R.id.textViewTitle).text = model.name
-        view.findViewById<TextView>(R.id.textViewCivilizationID).text = model.id.toString()
         view.findViewById<TextView>(R.id.textViewCivilizationName).text = model.name
         view.findViewById<TextView>(R.id.textViewCivilizationExpansion).text = model.expansion
-        view.findViewById<TextView>(R.id.textViewCivilizationArmyType).text = "food: " +model.cost.food+ " gold: " +model.cost.gold+ " stone: " +model.cost.stone+ " wood: " +model.cost.wood
+        view.findViewById<TextView>(R.id.textViewCivilizationArmyType).text = technologyCostToString(model.cost)
         view.findViewById<TextView>(R.id.textViewCivilizationTeamBonus).text = model.description
-        view.findViewById<TextView>(R.id.textViewCivilizationCivilizationBonus).text = getBonuses(model.appliesTo!!)
 
         return view
     }
 
-    private fun getBonuses(bonuses: List<String>): String {
-        var result: String = ""
-
-        bonuses.forEach {
-            result += "- " + it + "\n"
-        }
-
-        return result
+    private fun technologyCostToString(techCost : TechnologyCost?) : String {
+        if(techCost == null) return "-"
+        var outputString = ""
+        if(techCost.enemyVillager != null) outputString += "Enemy Villager: ${techCost.enemyVillager}\n"
+        if(techCost.food != null) outputString += "Food: ${techCost.food}\n"
+        if(techCost.gold != null) outputString += "Gold: ${techCost.gold}\n"
+        if(techCost.wood != null) outputString += "Wood: ${techCost.wood}\n"
+        if(techCost.stone != null) outputString += "Stone: ${techCost.stone}"
+        outputString = outputString.trim()
+        return if(outputString == "")  "-" else outputString
     }
 }
