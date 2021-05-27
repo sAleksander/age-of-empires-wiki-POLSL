@@ -24,23 +24,26 @@ class CivilizationDetailsFragment : Fragment() {
         val model = viewModel.currentCivilization!!
 
         view.findViewById<TextView>(R.id.textViewTitle).text = model.name
-        view.findViewById<TextView>(R.id.textViewCivilizationID).text = model.id.toString()
         view.findViewById<TextView>(R.id.textViewCivilizationName).text = model.name
         view.findViewById<TextView>(R.id.textViewCivilizationExpansion).text = model.expansion
         view.findViewById<TextView>(R.id.textViewCivilizationArmyType).text = model.armyType
         view.findViewById<TextView>(R.id.textViewCivilizationTeamBonus).text = model.teamBonus
-        view.findViewById<TextView>(R.id.textViewCivilizationCivilizationBonus).text = getBonuses(model.civilizationBonus!!)
+        view.findViewById<TextView>(R.id.textViewCivilizationCivilizationBonus).text = listToString(model.civilizationBonus)
 
         return view
     }
 
-    private fun getBonuses(bonuses: List<String>): String {
-        var result: String = ""
-
-        bonuses.forEach {
-            result += "- " + it + "\n"
+    private fun <T> listToString(list: List<T>?): String {
+        if (list == null) {
+            return "-"
         }
 
-        return result
+        var result: String = ""
+
+        list.forEach {
+            result += "$it\n"
+        }
+        result = result.trim()
+        return if(result == "") "-" else result
     }
 }
