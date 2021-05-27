@@ -8,7 +8,6 @@ import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.example.age_of_empires_wiki_polsl.R
 import com.example.age_of_empires_wiki_polsl.TempDatabase.ApiClasses.Technology
-import com.example.age_of_empires_wiki_polsl.ui.civilizations.CivilizationModel
 import kotlinx.android.synthetic.main.civilization_list_one_row.view.*
 
 class  TechnologyListAdapter(private var technologyList: LiveData<List<Technology>>, val technologyCallback: ICallbackTechnology):

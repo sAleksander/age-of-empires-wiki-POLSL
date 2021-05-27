@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.age_of_empires_wiki_polsl.R
 import com.example.age_of_empires_wiki_polsl.TempDatabase.ApiClasses.Technology
-import com.example.age_of_empires_wiki_polsl.ui.civilizations.CivilizationModel
 import com.example.age_of_empires_wiki_polsl.ui.civilizations.CivilizationViewModel
 import com.example.age_of_empires_wiki_polsl.ui.technologies.TechnologyViewModel
 import kotlinx.android.synthetic.main.fragment_civilization_list.*

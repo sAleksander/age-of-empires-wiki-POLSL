@@ -11,7 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.age_of_empires_wiki_polsl.R
-import com.example.age_of_empires_wiki_polsl.ui.civilizations.CivilizationModel
+import com.example.age_of_empires_wiki_polsl.TempDatabase.ApiClasses.Civilization
 import com.example.age_of_empires_wiki_polsl.ui.civilizations.CivilizationViewModel
 import kotlinx.android.synthetic.main.fragment_civilization_list.*
 
@@ -48,7 +48,7 @@ class CivilizationListFragment : Fragment(), ICallbackCivilization {
         }
     }
 
-    override fun clickCivilization(model: CivilizationModel) {
+    override fun clickCivilization(model: Civilization) {
         viewModel.currentCivilization = model
         findNavController().navigate(R.id.action_civilizationListFragment_to_civilizationDetailsFragment)
     }

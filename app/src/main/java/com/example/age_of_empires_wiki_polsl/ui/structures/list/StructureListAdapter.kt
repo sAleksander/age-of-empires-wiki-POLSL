@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.age_of_empires_wiki_polsl.R
 import com.example.age_of_empires_wiki_polsl.TempDatabase.ApiClasses.Structure
 import com.example.age_of_empires_wiki_polsl.TempDatabase.ApiClasses.Technology
-import com.example.age_of_empires_wiki_polsl.ui.civilizations.CivilizationModel
 import kotlinx.android.synthetic.main.civilization_list_one_row.view.*
 
 class  StructureListAdapter(private var structureList: LiveData<List<Structure>>, val structureCallback: ICallbackStructure):

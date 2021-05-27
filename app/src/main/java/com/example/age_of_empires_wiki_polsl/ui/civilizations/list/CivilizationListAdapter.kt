@@ -7,10 +7,10 @@ import android.widget.TextView
 import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.example.age_of_empires_wiki_polsl.R
-import com.example.age_of_empires_wiki_polsl.ui.civilizations.CivilizationModel
+import com.example.age_of_empires_wiki_polsl.TempDatabase.ApiClasses.Civilization
 import kotlinx.android.synthetic.main.civilization_list_one_row.view.*
 
-class CivilizationListAdapter(private var civilizationList: LiveData<List<CivilizationModel>>, val civilizationCallback: ICallbackCivilization):
+class CivilizationListAdapter(private var civilizationList: LiveData<List<Civilization>>, val civilizationCallback: ICallbackCivilization):
     RecyclerView.Adapter<CivilizationListAdapter.CivilizationHolder>() {
 
         inner class CivilizationHolder(view: View): RecyclerView.ViewHolder(view)
